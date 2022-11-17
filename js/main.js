@@ -15,6 +15,37 @@ BTNPLAY.addEventListener("click",
             valueDifficult = 101;
             let bombe= generaArrayNrRandom(NUMEROBOMBE,1,100)
             console.log(bombe);
+            for( let i = 1; i < valueDifficult; i++){
+                let box= document.createElement("div");
+                box.innerHTML = `${i}`
+                CONTAINER.append(box)
+                box.classList.add("boxstyle")
+                
+                box.addEventListener("click",
+                function(){
+                    if (bombe.includes(i)){
+                        this.classList.toggle("bomba")
+                    }
+                    else{
+                        this.classList.toggle("active")
+                    }
+                    console.log(i)
+                    
+                })
+    
+                if (SCELTA.value == "ez"){
+                    valueDifficult = 101;
+                    box.classList.add("width-easy")
+                }
+                if (SCELTA.value == "normal"){
+                    valueDifficult = 82;
+                    box.classList.add("width-mid")
+                }
+                if (SCELTA.value == "hard"){
+                    valueDifficult = 50;
+                    box.classList.add("width-hard")
+                }
+            }
         }
         if (SCELTA.value == "normal"){
             valueDifficult = 82;
@@ -26,31 +57,5 @@ BTNPLAY.addEventListener("click",
             let bombe= generaArrayNrRandom(NUMEROBOMBE,1,49)
             console.log(bombe);
         }
-        for( let i = 1; i < valueDifficult; i++){
-            let box= document.createElement("div");
-            box.innerHTML = `${i}`
-            CONTAINER.append(box)
-            box.classList.add("boxstyle")
-            
-            box.addEventListener("click",
-            function(){
-                console.log(i)
-                this.classList.toggle("active")
-            })
-
-            if (SCELTA.value == "ez"){
-                valueDifficult = 101;
-                box.classList.add("width-easy")
-            }
-            if (SCELTA.value == "normal"){
-                valueDifficult = 82;
-                box.classList.add("width-mid")
-            }
-            if (SCELTA.value == "hard"){
-                valueDifficult = 50;
-                box.classList.add("width-hard")
-            }
-        }
+        
 })
-
-
