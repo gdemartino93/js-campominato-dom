@@ -5,9 +5,8 @@ const ARRAYNUMERI=[]
 const NUMEROBOMBE= 16;
 const MAIN= document.querySelector("main")
 let score= 0;
-// dichiaro tasto play, container e la scelta della difficoltà
-
-// dichiaro tasto e container
+nomeUtente= prompt("Inserisci il tuo nome")
+document.getElementById("nomeOutput").innerHTML=`<span id="infoutente">Benvenuto ${nomeUtente}</span>`
 
 BTNPLAY.addEventListener("click",
     function(){
@@ -32,6 +31,8 @@ BTNPLAY.addEventListener("click",
                     }else{
                     this.classList.add("active");
                     score++
+                    document.getElementById("outputScore").innerHTML=`${score}`
+
                     console.log(score);
                     }
                 })

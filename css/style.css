@@ -158,6 +158,26 @@ footer{
     transform: translate(-50%,-50%);
     color: white;
 }
+.output{
+    font-size: 40px;
+    font-weight: bold;
+
+}
+#outputScore{
+    font-weight: bold;
+    font-size: 60px;
+    margin-left: 10px;
+    color: green;
+
+}
+#infoutente{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+
+
 @keyframes gameover {
     from{
         opacity: 0;
