@@ -7,7 +7,6 @@ img,
 svg {
     display: block;
     max-width: 100%;
-    /* height: auto; */
 }
 a {
     text-decoration: none;
@@ -32,6 +31,7 @@ textarea,
 select {
     font: inherit;
 }
+
 /* RESET CSS */
 
 .btn {
@@ -132,22 +132,38 @@ footer{
 }
 .bomba{
     background-color: red;
+    background-image: url(../img/bomb.svg);
+    object-fit: cover;
+    object-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.gameover {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 170px);
-    z-index: 999;
-    background-color: yellow;
-  }
 
-  .velonero{
+.velonero{
     background-color: black;
     opacity: 0.5;
     position: fixed;
     z-index: 1000;
     height: 85vh;
     width: 50%;
-  }
+    animation: gameover 2s linear;
+}
+.velonero > span {
+    background: red;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 50px;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+@keyframes gameover {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.5;
+    }
+    
+}

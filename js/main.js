@@ -19,7 +19,6 @@ BTNPLAY.addEventListener("click",
             console.log(bombe);
             for( let i = 1; i < valueDifficult; i++){
                 let box= document.createElement("div");
-                box.innerHTML = `${i}`
                 CONTAINER.append(box)
                 box.classList.add("boxstyle")
                 
@@ -27,7 +26,9 @@ BTNPLAY.addEventListener("click",
                 function(){                    
                     if (bombe.includes(i)){
                         this.classList.toggle("bomba");
-                        CONTAINER.innerHTML+=`<div class="velonero"></div>`;                      
+                       
+                        CONTAINER.innerHTML+=`<div class="velonero"><span>Game Over</span></div>`;
+                        
                     }else{
                     this.classList.add("active");
                     score++
@@ -47,7 +48,6 @@ BTNPLAY.addEventListener("click",
             console.log(bombe);
             for( let i = 1; i < valueDifficult; i++){
                 let box= document.createElement("div");
-                box.innerHTML = `${i}`
                 CONTAINER.append(box)
                 box.classList.add("boxstyle")
                 
@@ -55,9 +55,12 @@ BTNPLAY.addEventListener("click",
                 function(){
                     if (bombe.includes(i)){
                         this.classList.toggle("bomba")
+                        CONTAINER.innerHTML+=`<div class="velonero"></div>`;
                     }
+                    else{
                     console.log(i)
                     this.classList.toggle("active")
+                    }
                 })
                 if (SCELTA.value == "normal"){
                     valueDifficult = 82;
@@ -71,7 +74,6 @@ BTNPLAY.addEventListener("click",
             console.log(bombe);
             for( let i = 1; i < valueDifficult; i++){
                 let box= document.createElement("div");
-                box.innerHTML = `${i}`
                 CONTAINER.append(box)
                 box.classList.add("boxstyle")
                 
@@ -79,9 +81,12 @@ BTNPLAY.addEventListener("click",
                 function(){
                     if (bombe.includes(i)){
                         box.classList.toggle("bomba")
+                        CONTAINER.innerHTML+=`<div class="velonero"></div>`;
                     }
+                    else{
                     console.log(i)
                     this.classList.toggle("active")
+                    }
                 })  
                 if (SCELTA.value == "hard"){
                     valueDifficult = 50;
