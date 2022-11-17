@@ -1,7 +1,7 @@
 const BTNPLAY = document.getElementById("play");
 const CONTAINER = document.querySelector(".container");
 const SCELTA = document.getElementById("difficult");
-
+const ARRAYNUMERI=[]
 // dichiaro tasto play, container e la scelta della difficoltà
 
 // dichiaro tasto e container
@@ -12,12 +12,15 @@ BTNPLAY.addEventListener("click",
         let valueDifficult= 0;
         if (SCELTA.value == "ez"){
             valueDifficult = 101;
+            let bombe= generaArrayNrRandom(16,1,100)
         }
         if (SCELTA.value == "normal"){
             valueDifficult = 82;
+            let bombe= generaArrayNrRandom(16,1,81)
         }
         if (SCELTA.value == "hard"){
             valueDifficult = 50;
+            let a= generaArrayNrRandom(16,1,49)
         }
         for( let i = 1; i < valueDifficult; i++){
             let box= document.createElement("div");
@@ -25,7 +28,6 @@ BTNPLAY.addEventListener("click",
             CONTAINER.append(box)
             box.classList.add("boxstyle")
             
-
             box.addEventListener("click",
             function(){
                 console.log(i)
@@ -46,3 +48,7 @@ BTNPLAY.addEventListener("click",
             }
         }
 })
+
+
+let a= generaArrayNrRandom(16,1,100)
+console.log(a);
