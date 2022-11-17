@@ -2,6 +2,7 @@ const BTNPLAY = document.getElementById("play");
 const CONTAINER = document.querySelector(".container");
 const SCELTA = document.getElementById("difficult");
 const ARRAYNUMERI=[]
+const NUMEROBOMBE= 16;
 // dichiaro tasto play, container e la scelta della difficoltà
 
 // dichiaro tasto e container
@@ -12,15 +13,18 @@ BTNPLAY.addEventListener("click",
         let valueDifficult= 0;
         if (SCELTA.value == "ez"){
             valueDifficult = 101;
-            let bombe= generaArrayNrRandom(16,1,100)
+            let bombe= generaArrayNrRandom(NUMEROBOMBE,1,100)
+            console.log(bombe);
         }
         if (SCELTA.value == "normal"){
             valueDifficult = 82;
-            let bombe= generaArrayNrRandom(16,1,81)
+            let bombe= generaArrayNrRandom(NUMEROBOMBE,1,81)
+            console.log(bombe);
         }
         if (SCELTA.value == "hard"){
             valueDifficult = 50;
-            let a= generaArrayNrRandom(16,1,49)
+            let bombe= generaArrayNrRandom(NUMEROBOMBE,1,49)
+            console.log(bombe);
         }
         for( let i = 1; i < valueDifficult; i++){
             let box= document.createElement("div");
@@ -50,5 +54,3 @@ BTNPLAY.addEventListener("click",
 })
 
 
-let a= generaArrayNrRandom(16,1,100)
-console.log(a);
