@@ -50,12 +50,16 @@ BTNPLAY.addEventListener("click",
                 let box= document.createElement("div");
                 CONTAINER.append(box)
                 box.classList.add("boxstyle")
+                box.innerHTML=`${i}`
+                
                 
                 box.addEventListener("click",
                 function(){
                     if (bombe.includes(i)){
                         this.classList.toggle("bomba")
-                        CONTAINER.innerHTML+=`<div class="velonero"></div>`;
+                        
+                        CONTAINER.innerHTML+=`<div class="velonero"><span>Game Over</span></div>`;
+                        box.classList.add("bomba")
                     }
                     else{
                     console.log(i)
@@ -81,7 +85,7 @@ BTNPLAY.addEventListener("click",
                 function(){
                     if (bombe.includes(i)){
                         box.classList.toggle("bomba")
-                        CONTAINER.innerHTML+=`<div class="velonero"></div>`;
+                        CONTAINER.innerHTML+=`<div class="velonero"><span>Game Over</span></div>`;
                     }
                     else{
                     console.log(i)
