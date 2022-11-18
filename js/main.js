@@ -3,7 +3,8 @@ const CONTAINER = document.querySelector(".container");
 const SCELTA = document.getElementById("difficult");
 const ARRAYNUMERI=[]
 const NUMEROBOMBE= 16;
-const MAIN= document.querySelector("main")
+const MAIN= document.querySelector("main");
+const INFOUTENTE= document.getElementById("outputScore");
 let score= 0;
 nomeUtente= prompt("Inserisci il tuo nome")
 document.getElementById("nomeOutput").innerHTML=`<span id="infoutente">Benvenuto ${nomeUtente}</span>`
@@ -11,11 +12,15 @@ document.getElementById("nomeOutput").innerHTML=`<span id="infoutente">Benvenuto
 BTNPLAY.addEventListener("click",
     function(){
         CONTAINER.innerHTML = ""
+        INFOUTENTE.innerHTML = "";
+        score=0
         let valueDifficult= 0;
         if (SCELTA.value == "ez"){
             valueDifficult = 101;
             let bombe= generaArrayNrRandom(NUMEROBOMBE,1,100)
             console.log(bombe);
+            console.log(`Ciao ${nomeUtente}, verrai bannato perchè stai cheattando`);
+
             for( let i = 1; i < valueDifficult; i++){
                 let box= document.createElement("div");
                 CONTAINER.append(box)
@@ -46,7 +51,9 @@ BTNPLAY.addEventListener("click",
         if (SCELTA.value == "normal"){
             valueDifficult = 82;
             let bombe= generaArrayNrRandom(NUMEROBOMBE,1,81)
+            console.log(`Ciao ${nomeUtente}, verrai bannato perchè stai cheattando`);
             console.log(bombe);
+
             for( let i = 1; i < valueDifficult; i++){
                 let box= document.createElement("div");
                 CONTAINER.append(box)
@@ -65,6 +72,8 @@ BTNPLAY.addEventListener("click",
                     else{
                     console.log(i)
                     this.classList.toggle("active")
+                    score++
+                    document.getElementById("outputScore").innerHTML=`${score}`
                     }
                 })
                 if (SCELTA.value == "normal"){
@@ -77,6 +86,8 @@ BTNPLAY.addEventListener("click",
             valueDifficult = 50;
             let bombe= generaArrayNrRandom(NUMEROBOMBE,1,49)
             console.log(bombe);
+            console.log(`Ciao ${nomeUtente}, verrai bannato perchè stai cheattando`);
+
             for( let i = 1; i < valueDifficult; i++){
                 let box= document.createElement("div");
                 CONTAINER.append(box)
@@ -91,6 +102,8 @@ BTNPLAY.addEventListener("click",
                     else{
                     console.log(i)
                     this.classList.toggle("active")
+                    score++
+                    document.getElementById("outputScore").innerHTML=`${score}`
                     }
                 })  
                 if (SCELTA.value == "hard"){
